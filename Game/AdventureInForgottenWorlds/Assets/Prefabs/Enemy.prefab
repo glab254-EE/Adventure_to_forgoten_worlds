@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5826657017378039203}
   - component: {fileID: 6552035381057909668}
   - component: {fileID: 3521018266582066992}
-  - component: {fileID: 7285120053346017091}
+  - component: {fileID: 6579635388317693799}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -181,7 +181,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7285120053346017091
+--- !u!114 &6579635388317693799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,19 +190,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3216672829968050071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a55443824736f84f936afd8f5af366c, type: 3}
+  m_Script: {fileID: 11500000, guid: 52ba544a85bab78418e418d9d5593e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
   rb: {fileID: 6552035381057909668}
-  maxhp: 5
+  maxhp: 1
   damage: 1
   animator: {fileID: 3521018266582066992}
-  attackrange: 2.2
+  attackrange: 1.6
   enemymask:
     serializedVersion: 2
     m_Bits: 128
   allymask:
     serializedVersion: 2
-    m_Bits: 264
-  _hp: 5
+    m_Bits: 320
+  _hp: 1

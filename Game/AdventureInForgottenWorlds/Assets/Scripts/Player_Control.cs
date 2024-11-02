@@ -46,7 +46,7 @@ public class Player_Control : MonoBehaviour
         Vector2 direction = Vector2.down;
         float distance = 0.1f;
         
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundmask);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundmask+LayerMask.GetMask("MovableObj"));
         if (hit.collider != null) {
             if (koyotetimer>0){
                 koyotetimer = 0;
@@ -101,6 +101,13 @@ public class Player_Control : MonoBehaviour
     void FixedUpdate(){
         if (dead) return;
         cspeed = Input.GetAxisRaw("Horizontal");
+        Debug.DrawRay(transform.position-new Vector3(0,0.8f),transform.right,Color.red,0.6f);
+        Debug.DrawRay(transform.position-new Vector3(0,0.8f),-transform.right,Color.red,0.6f);
+        RaycastHit2D hitrite = Physics2D.Raycast(transform.position-new Vector3(0,0.8f),transform.right,0.6f,groundmask);
+        RaycastHit2D hitleft = Physics2D.Raycast(transform.position-new Vector3(0,0.8f),-transform.right,0.6f,groundmask);    
+        if ((hitrite.collider && cspeed > 0)||(hitleft.collider && cspeed < 0)){
+            cspeed = 0;
+        }
         rb.velocity = new Vector2(cspeed*plrspeed,rb.velocity.y);
     }
    /* public void Shoot(){
